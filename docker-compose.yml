@@ -9,10 +9,10 @@ services:
       gunicorn -b 0.0.0.0:8000
         --access-logfile -
         --reload
-        "appversions.app:create_app()"
+        "app.app:create_app()"
     environment:
       PYTHONUNBUFFERED: 'true'
     volumes:
-      - '.:/opt/appversions'
+      - '.:/opt/app'
     ports:
       - '8000:8000'
